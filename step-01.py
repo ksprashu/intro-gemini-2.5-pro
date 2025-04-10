@@ -50,18 +50,19 @@ def generate_text(prompt):
 
 # Define some example prompts
 example_prompts = [
-    ["Explain the concept of photosynthesis in simple terms."],
-    ["Generate a list of creative names for a new coffee shop."],
+    ["Explain the concept of photosynthesis in brief."],
+    ["Generate 5 creative names for a new coffee shop."],
     ["Compose a haiku about a rainy day."],
 ]
 
 # Gradio interface
 demo = gr.Interface(
     fn=generate_text,
-    inputs=gr.Textbox(lines=2, placeholder="Enter your prompt here..."),
+    inputs=gr.Textbox(lines=2, placeholder="Enter your prompt here or click on the examples below..."),
     outputs=gr.Textbox(lines=10, label="Generated Text"),
     title="Gemini 2.5 Pro Demo",
     description="Enter a prompt and click 'Submit' to generate text using the Gemini 2.5 Pro model.",
+    examples=example_prompts,
     flagging_mode="never",
 )
 
