@@ -48,6 +48,13 @@ def generate_text(prompt):
         return f"An error occurred: {e}"
 
 
+# Define some example prompts
+example_prompts = [
+    ["Explain the concept of photosynthesis in simple terms."],
+    ["Generate a list of creative names for a new coffee shop."],
+    ["Compose a haiku about a rainy day."],
+]
+
 # Gradio interface
 demo = gr.Interface(
     fn=generate_text,
