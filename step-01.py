@@ -55,7 +55,7 @@ demo = gr.Interface(
     outputs=gr.Textbox(lines=10, label="Generated Text"),
     title="Gemini 2.5 Pro Demo",
     description="Enter a prompt and click 'Submit' to generate text using the Gemini 2.5 Pro model.",
-    flagging_options=None
+    flagging_mode="never",
 )
 
 if __name__ == "__main__":
