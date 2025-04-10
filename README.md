@@ -1,6 +1,6 @@
 # Intro to Gemini 2.5 Pro
 
-[Gemini 2.5 Pro](https://blog.google/technology/google-deepmind/gemini-model-thinking-updates-march-2025/) is Google's strongest model for coding and world knowledge.
+[Gemini 2.5 Pro](https://blog.google/technology/google-deepmind/gemini-model-thinking-updates-march-2025/) is Google's strongest model for coding and world knowledge. (as on April 2025)
 
 With the 2.5 series, the Gemini models are now hybrid reasoning models! Gemini 2.5 Pro can apply an extended amount of thinking across tasks, and use tools in order to maximize response accuracy.
 
@@ -36,8 +36,16 @@ Use your preferred python environment to get started. You can use your local dev
 
 For ease of use, we will use the Cloud Shell environment for this tutorial. Please follow the instructions in [Getting Started with Cloud Shell and gcloud](https://codelabs.developers.google.com/codelabs/cloud-shell#0) to activate your Cloud Shell.
 
+Once you have your Cloud Shell ready, go into the terminal and start setting it up with the following commands. 
+
+0. Clone the tutorial codebase
+```bash
+git clone https://github.com/ksprashu/intro-gemini-2.5-pro.git
+```
+
 1. Create and activate a virtual environment
 ```bash
+cd intro-gemini-2.5-pro
 python3 -m venv .venv
 source .venv/bin/activate
 ```
@@ -45,6 +53,18 @@ source .venv/bin/activate
 2. Install Google Gen AI SDK for Python
 ```bash
 pip install google-genai
+```
+
+We will also be using Streamlit to build out the UI
+```bash
+pip install streamlit
+```
+
+OR
+
+use the requirements file to install all the dependencies
+```bash
+pip install -r requirements.txt
 ```
 
 3. Setup application default credentials
