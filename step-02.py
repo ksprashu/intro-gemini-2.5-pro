@@ -54,6 +54,13 @@ def generate_text_streaming(prompt, history=[]):
         yield f"An error occurred: {e}"
 
 
+# Define some example prompts
+example_prompts = [
+    ["Write a story about a robot who learns to paint."],
+    ["Explain the history of the internet, starting from ARPANET to the modern web, covering key milestones, technologies, and societal impacts."],
+    ["Create a plot for a Sci-Fi movie where AI and Humans defeat an alien attack on Earth"]
+]
+
 # Gradio interface
 demo = gr.Interface(
     fn=generate_text_streaming,
@@ -61,6 +68,7 @@ demo = gr.Interface(
     outputs=gr.Textbox(lines=10, label="Generated Text"),
     title="Gemini 2.5 Pro Demo - Streaming Response",
     description="Enter a prompt and click 'Submit' to generate text using the Gemini 2.5 Pro model.",
+    examples=example_prompts,    
     flagging_mode="never",
 )
 
