@@ -55,22 +55,15 @@ def generate_text_streaming(prompt, history=[]):
 
 
 # Gradio interface
-# demo = gr.Interface(
-#     fn=generate_text_streaming,
-#     inputs=gr.Textbox(lines=2, placeholder="Enter your prompt here which will generate a long response..."),
-#     outputs=gr.Textbox(lines=10, label="Generated Text"),
-#     title="Gemini 2.5 Pro Demo - Streaming Response",
-#     description="Enter a prompt and click 'Submit' to generate text using the Gemini 2.5 Pro model.",
-#     flagging_options=None,
-# )
-
-# Gradio interface
-demo = gr.ChatInterface(
+demo = gr.Interface(
     fn=generate_text_streaming,
-    title="Gemini 2.5 Pro Streaming Demo",
-    description="Enter a prompt and see the text stream in real-time from the Gemini 2.5 Pro model.",
-    type='messages'
+    inputs=gr.Textbox(lines=2, placeholder="Enter your prompt here which will generate a long response..."),
+    outputs=gr.Textbox(lines=10, label="Generated Text"),
+    title="Gemini 2.5 Pro Demo - Streaming Response",
+    description="Enter a prompt and click 'Submit' to generate text using the Gemini 2.5 Pro model.",
+    flagging_mode="never",
 )
+
 
 if __name__ == "__main__":
     demo.launch(debug=True)
