@@ -23,7 +23,7 @@ load_dotenv()
 
 # Create the Gen AI client
 # This uses the environment vars from .env file to initialise the client
-# The GOOGLE_GENAI_USE_VERTEXAI value specifies that we'll create a Vertex AI client  
+# The GOOGLE_GENAI_USE_VERTEXAI value specifies that we'll create a Vertex AI client
 client = genai.Client()
 
 def generate_text(prompt):
@@ -40,7 +40,7 @@ def generate_text(prompt):
         return "Please enter a prompt."
     try:
         response = client.models.generate_content(
-            model=os.environ.get("GEMINI_MODEL"), 
+            model=os.environ.get("GEMINI_MODEL"),
             contents=prompt
         )
         return response.text
